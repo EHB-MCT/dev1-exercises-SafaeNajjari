@@ -85,7 +85,7 @@ context.beginPath();
 context.moveTo(518, 250);
 context.lineTo(700,250);
 context.stroke();
-
+//
 
 
 }
