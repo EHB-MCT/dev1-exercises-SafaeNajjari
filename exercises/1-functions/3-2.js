@@ -4,17 +4,21 @@ import * as Utils from "../../scripts/utils.js";
 
 draw();
 
+
 function draw() {
     context.lineWidth = 2;
     context.strokeStyle = "#FFF";
     context.fillStyle = "#3498DB";
     context.fillRect(50, 50, 300, 300);
-    drawLines();
+    drawGrid();
 }
-function drawLines() {
+function drawGrid() {
     let i = 0;
-    while (i <= 10) {
-        Utils.drawLine(75, 75 + i * 25, 325, 75 + i * 25);
+    while (i <= 5) {
+        let x = 75 + i * 50;
+        let y = x;
+        Utils.drawLine(75, y, 325, y);
+        Utils.drawLine(x, 75, x, 325);
         i = i + 1;
     }
 }
