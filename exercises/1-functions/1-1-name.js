@@ -9,7 +9,7 @@ drawLine();
 
 function drawLine(){
   //  
-    context.lineWidth = 5;
+   context.lineWidth = 5;
    context.strokeStyle = 'purple';
    context.beginPath();
    context.moveTo(30, 27);
