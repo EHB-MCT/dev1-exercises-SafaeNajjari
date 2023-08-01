@@ -5,35 +5,30 @@ import * as Utils from "../../scripts/utils.js";
 let width = context.canvas.width;
 let height = context.canvas.height;
 
-
-
 let ghosts = [];
 
 setup();
 update();
 
-// wnr we een object gebruiken dan moeten we (,) gebruiken ipv (;)
 function setup() {
     for (let i = 0; i < 100; i++) {
         let ghost = {
-        x: Utils.randomNumber(0, width),
-        y: Utils.randomNumber(0, height),
-        hue: Utils.randomNumber(0, 360), 
-        move: function () {
-        this.x += Utils.randomNumber(-2, 2);
-        this.y += Utils.randomNumber(-2, 2);
-        drawGhost(this.x, this.y, this.hue);
-        }
-    };
-    ghosts.push(ghost);
+            x: Utils.randomNumber(0, width),
+            y: Utils.randomNumber(0, width),
+            hue: Utils.randomNumber(0, 360),
+        };
+        ghosts.push(ghost);
     }
 }
 
 function update() {
     context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
-    for (let i = 0; i < x.ghosts.length; i++) {
-        ghosts[i] .move();
+    for (let i = 0; i < ghosts.length; i++) {
+        let ghost = ghosts[i];
+        ghost.x += Utils.randomNumber(-5, 5);
+        ghost.y += Utils.randomNumber(-5, 5);
+        drawGhost(ghost.x, ghost.y, ghost.hue);
     }
     requestAnimationFrame(update);
 }
